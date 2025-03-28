@@ -185,5 +185,23 @@
     "languages": "js",
     "type": "library",
     "version": "0.48.5"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^14.0.4",
+    "axios": "^1.8.4",
+    "expo-av": "^15.0.2",
+    "expo-camera": "^16.0.18",
+    "expo-document-picker": "^13.0.3",
+    "expo-image-picker": "^16.0.6",
+    "expo-permissions": "^14.4.0",
+    "expo-video": "^2.0.6",
+    "lucide-react-native": "^0.484.0",
+    "react-native-camera": "^4.2.1",
+    "react-native-progress-circle": "^2.1.0",
+    "react-native-reanimated": "^3.17.1",
+    "react-native-safe-area-context": "^5.3.0",
+    "react-native-screens": "^4.9.2",
+    "react-native-vision-camera": "^4.6.4",
+    "react-native-websocket": "^1.0.2"
   }
 }

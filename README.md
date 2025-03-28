@@ -10,7 +10,6 @@ npm install tani-native-sdk
 
 ## Usage
 
-
 ```js
 import { multiply } from 'tani-native-sdk';
 
@@ -18,7 +17,6 @@ import { multiply } from 'tani-native-sdk';
 
 const result = await multiply(3, 7);
 ```
-
 
 ## Contributing
 
