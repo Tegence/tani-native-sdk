@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   View,
   Text,
@@ -100,7 +100,7 @@ const VidWebCam = ({
     }
   };
 
-  const attemptReconnect = useCallback(() => {
+  const attemptReconnect = () => {
     if (!isMountedRef.current || !displayCamera) return;
 
     if (reconnectAttemptsRef.current < MAX_RECONNECT_ATTEMPTS) {
@@ -115,7 +115,7 @@ const VidWebCam = ({
     } else {
       handleError('Max reconnection attempts reached');
     }
-  }, []);
+  };
 
   const handleSuccess = () => {
     cleanup();
@@ -128,7 +128,7 @@ const VidWebCam = ({
     stopFrameCapture();
   };
 
-  const initWebSocket = useCallback(() => {
+  const initWebSocket = () => {
     if (!isMountedRef.current) return;
 
     setIsLoading(true);
@@ -232,16 +232,9 @@ const VidWebCam = ({
       setError('Failed to initialize connection');
       attemptReconnect();
     }
-  }, [
-    isMountedRef,
-    setIsLoading,
-    setError,
-    reconnectAttemptsRef,
-    stopFrameCapture,
-    attemptReconnect,
-  ]);
+  };
 
-  const cleanup = useCallback(() => {
+  const cleanup = () => {
     stopFrameCapture();
     if (wsRef.current) {
       try {
@@ -263,7 +256,7 @@ const VidWebCam = ({
         wsRef.current = null;
       }
     }
-  }, []);
+  };
 
   // Component lifecycle
   useEffect(() => {
@@ -272,13 +265,13 @@ const VidWebCam = ({
       isMountedRef.current = false;
       cleanup();
     };
-  }, [cleanup]);
+  }, []);
 
   useEffect(() => {
     if (!displayCamera) return;
     initWebSocket();
     return () => cleanup();
-  }, [displayCamera, initWebSocket, cleanup]);
+  }, [displayCamera]);
 
   const toggleCamera = async () => {
     if (displayCamera) {
