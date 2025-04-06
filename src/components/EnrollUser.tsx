@@ -13,6 +13,7 @@ import WebCamComponent from './utils/Webcam';
 import { CameraView } from 'expo-camera';
 import axios from './api/useAxios';
 import type { TaniAuthTypes } from '../types/TaniAuthTypes';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 const { width } = Dimensions.get('window'); // Get screen width
 
@@ -114,6 +115,7 @@ const EnrollUser: React.FC<TaniAuthTypes> = ({ authInstance, onSuccess }) => {
         cameraOpen={cameraOpen}
         setCameraOpen={setCameraOpen}
         ref={cameraRef}
+        buttonTitle="Enroll Face"
       />
       {imageSrc && (
         <TouchableOpacity style={styles.uploadButton} onPress={enrollUser}>
@@ -142,6 +144,11 @@ const EnrollUser: React.FC<TaniAuthTypes> = ({ authInstance, onSuccess }) => {
             {/* Close Modal Button */}
             {uploadCompleted && (
               <View style={styles.successContainer}>
+                <MaterialCommunityIcons
+                  name="check-circle"
+                  size={66}
+                  color="#64C155"
+                />
                 <Text style={styles.successText}>
                   Person added successfully
                 </Text>
@@ -207,10 +214,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#4327B2',
     padding: 12,
     marginTop: 30,
-    borderRadius: 5,
-    width: 200,
-    alignSelf: 'flex-end',
-    marginRight: 50,
+    borderRadius: 9,
+    width: 300,
+    alignSelf: 'center',
+    marginHorizontal: 'auto',
   },
   uploadText: {
     color: 'white',

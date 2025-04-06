@@ -11,6 +11,7 @@ export type WebCamProps = {
   setImageSrc: (value: string | null) => void;
   cameraOpen: boolean;
   setCameraOpen: (value: boolean) => void;
+  buttonTitle: string;
 };
 
 export type VidWebCamProps = {

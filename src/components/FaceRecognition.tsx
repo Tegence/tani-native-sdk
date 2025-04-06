@@ -14,6 +14,7 @@ import axios from './api/useAxios';
 import { AxiosError } from 'axios';
 import type { FaceRecognitionResult } from '../types/FaceRecognitionResult';
 import type { TaniAuthTypes } from '../types/TaniAuthTypes';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 const { width } = Dimensions.get('window'); // Get screen width
 
@@ -105,6 +106,7 @@ const FaceRecognition: React.FC<TaniAuthTypes> = ({
         cameraOpen={cameraOpen}
         setCameraOpen={setCameraOpen}
         ref={cameraRef}
+        buttonTitle="Verify Image"
       />
       {imageSrc && (
         <TouchableOpacity style={styles.uploadButton} onPress={verifyFace}>
@@ -132,6 +134,11 @@ const FaceRecognition: React.FC<TaniAuthTypes> = ({
 
             {verifyFaceResult && (
               <View style={styles.successContainer}>
+                <MaterialCommunityIcons
+                  name="check-circle"
+                  size={66}
+                  color="#64C155"
+                />
                 <View>
                   <Text style={styles.successText}>We have your result!</Text>
                   <Text style={styles.resultText}>
@@ -203,10 +210,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#4327B2',
     padding: 12,
     marginTop: 30,
-    borderRadius: 5,
-    width: 200,
-    alignSelf: 'flex-end',
-    marginRight: 50,
+    borderRadius: 9,
+    width: 300,
+    alignSelf: 'center',
+    marginHorizontal: 'auto',
   },
   uploadText: {
     color: 'white',

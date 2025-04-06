@@ -6587,7 +6587,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-file-system@npm:~18.0.12":
+"expo-file-system@npm:^18.0.12, expo-file-system@npm:~18.0.12":
   version: 18.0.12
   resolution: "expo-file-system@npm:18.0.12"
   dependencies:
@@ -6617,6 +6617,17 @@ __metadata:
   peerDependencies:
     expo: "*"
   checksum: 7741b4b926124a1f85e51b0b8c8c9adc37fccf0654eaa0e715cb55cffc716bdc149c0421120f9bec69a69643d3328ec8562899b4aa37a0fdcecfb6fe3cf6f985
+  languageName: node
+  linkType: hard
+
+"expo-image-manipulator@npm:^13.0.6":
+  version: 13.0.6
+  resolution: "expo-image-manipulator@npm:13.0.6"
+  dependencies:
+    expo-image-loader: ~5.0.0
+  peerDependencies:
+    expo: "*"
+  checksum: 5e2c9e0e7f1a57f5aa24429854956db97d38b83e90fba6d6f3c4801dec087222f4845332a3e974bdef93acf6b378a8dff45fd7ba9b47fcbc5291e368a1712742
   languageName: node
   linkType: hard
 
@@ -11869,6 +11880,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-animatable@npm:1.4.0":
+  version: 1.4.0
+  resolution: "react-native-animatable@npm:1.4.0"
+  dependencies:
+    prop-types: ^15.8.1
+  checksum: a1b211aff745b97351d78643d641fa298f7d71524eaf22fee8a69257ce52e85d6b3caf8e7fd26a521af34984fba7402b7c632c35ea69d618769387d1dcb6b32a
+  languageName: node
+  linkType: hard
+
 "react-native-builder-bob@npm:^0.36.0":
   version: 0.36.0
   resolution: "react-native-builder-bob@npm:0.36.0"
@@ -11917,6 +11937,18 @@ __metadata:
     react: ">=18.2.0"
     react-native: ">=0.73.0"
   checksum: 4e07c1e34c01c8d50fd7c1d0460db06f6f0515197405230386a8ffb950cb724b10743af032310d1384df0a90059bfb8992ba2d93344ce86315315f0493feccc2
+  languageName: node
+  linkType: hard
+
+"react-native-modal@npm:^14.0.0-rc.1":
+  version: 14.0.0-rc.1
+  resolution: "react-native-modal@npm:14.0.0-rc.1"
+  dependencies:
+    react-native-animatable: 1.4.0
+  peerDependencies:
+    react: "*"
+    react-native: ">=0.70.0"
+  checksum: 19bca96dde148c14ed4cc0e52fedd0a12ca952815e4dcbea31d0a98962d75dc3c011c677f5f9cd15f2b88f78ccd03134647b280724bc6de148c25e28eea1a7e4
   languageName: node
   linkType: hard
 
@@ -13600,6 +13632,8 @@ __metadata:
     expo-av: ^15.0.2
     expo-camera: ^16.0.18
     expo-document-picker: ^13.0.3
+    expo-file-system: ^18.0.12
+    expo-image-manipulator: ^13.0.6
     expo-image-picker: ^16.0.6
     expo-permissions: ^14.4.0
     expo-video: ^2.0.6
@@ -13610,6 +13644,7 @@ __metadata:
     react-native: 0.76.7
     react-native-builder-bob: ^0.36.0
     react-native-camera: ^4.2.1
+    react-native-modal: ^14.0.0-rc.1
     react-native-progress-circle: ^2.1.0
     react-native-reanimated: ^3.17.1
     react-native-safe-area-context: ^5.3.0
